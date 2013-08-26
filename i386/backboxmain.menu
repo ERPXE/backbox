@@ -1,0 +1,44 @@
+LABEL BACKBOXLIVE32
+MENU LABEL ^BackBox x32
+KERNEL er/plugins/backbox/i386/vmlinuz
+INITRD er/plugins/backbox/i386/initrd.gz
+APPEND file=er/plugins/backbox/i386/backbox.seed boot=casper vga=791 netboot=nfs nfsroot=10.0.0.1:/tftpboot/er/shares/backbox/i386 ramdisk_size=200000 nolock vga=791 aufs --
+TEXT HELP
+                 BackBox x32 Live.
+ENDTEXT
+
+LABEL BACKBOXLIVEFORENSICS32
+MENU LABEL ^BackBox x32 - Forensic Mode
+KERNEL er/plugins/backbox/i386/vmlinuz
+INITRD er/plugins/backbox/i386/initrd_forensic.gz
+APPEND file=er/plugins/backbox/i386/backbox.seed boot=casper locale=en_US bootkbd=us console-setup/layoutcode=us vga=791 netboot=nfs nfsroot=10.0.0.1:/tftpboot/er/shares/backbox/i386 ramdisk_size=200000 nolock vga=791 aufs --
+TEXT HELP
+                 BackBox x32- Forensic Mode.
+ENDTEXT
+
+LABEL BACKBOXPERSISTENT32
+MENU LABEL ^BackBox x32 - Persistent Mode
+KERNEL er/plugins/backbox/i386/vmlinuz
+INITRD er/plugins/backbox/i386/initrd.gz
+APPEND file=er/plugins/backbox/i386/backbox.seed boot=casper persistent locale=en_US bootkbd=us console-setup/layoutcode=us vga=791 netboot=nfs nfsroot=10.0.0.1:/tftpboot/er/shares/backbox/i386 ramdisk_size=200000 nolock vga=791 aufs --
+TEXT HELP
+                 BackBox x32 - Persistent Mode.
+ENDTEXT
+
+LABEL BACKBOXTEXT32
+MENU LABEL ^BackBox x32 - Text Mode
+KERNEL er/plugins/backbox/i386/vmlinuz
+INITRD er/plugins/backbox/i386/initrd.gz
+APPEND file=er/plugins/backbox/i386/backbox.seed boot=casper text vga=791 netboot=nfs nfsroot=10.0.0.1:/tftpboot/er/shares/backbox/i386 ramdisk_size=200000 nolock vga=791 aufs --
+TEXT HELP
+                 BackBox x32 - Text Mode.
+ENDTEXT
+
+LABEL BACKBOXXFORCEVESA32
+MENU LABEL ^BackBox x32 - Compatibility Mode
+KERNEL er/plugins/backbox/i386/vmlinuz
+INITRD er/plugins/backbox/i386/initrd.gz
+APPEND file=er/plugins/backbox/i386/backbox.seed boot=casper xforcevesa ramdisk_size=1048576 root=/dev/ram rw noapic noapci nosplash irqpoll netboot=nfs nfsroot=10.0.0.1:/tftpboot/er/shares/backbox/i386 ramdisk_size=200000 nolock vga=791 aufs --
+TEXT HELP
+                 BackBox x32 - Compatibility Mode.
+ENDTEXT
